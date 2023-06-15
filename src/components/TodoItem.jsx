@@ -6,11 +6,17 @@ export function TodoItem({ todo, cambiarEstado }) {
     cambiarEstado(id)
   }
   return (
-    <li className="list-group-item">
-      <input type="checkbox" id="check" className="form-checked-input me-2" onChange={fnCambiarEstado} checked={completed}/>
-      {task}
-
-    </li>  
-
-  )
+    <li
+      className="list-group-item form-checked-input me-2"
+      key={id}
+      onClick={fnCambiarEstado}
+      style={{ backgroundColor: completed ? "lightblue" : "white" }}
+    >
+      <input
+        type="checkbox"
+        className=""
+      /> 
+    {task}
+    </li>
+  );
 }
